@@ -1,7 +1,17 @@
+import { MockedProvider } from '@apollo/client/testing'
 import type { Preview } from '@storybook/react'
+import React from 'react'
 import '../src/app/globals.css'
+import { mocks } from '../src/app/page.mock'
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Story />
+      </MockedProvider>
+    )
+  ],
   parameters: {
     backgrounds: {
       disable: true

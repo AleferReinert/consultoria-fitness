@@ -7,7 +7,7 @@ import { client } from 'utils/client'
 import './globals.css'
 
 const inter = Inter({
-  weight: ['300', '400', '500', '700', '900'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap'
 })
@@ -16,6 +16,10 @@ export interface EnterpriseProps {
   name: string
   phone: string
   email: string
+  facebook: string | null
+  instagram: string | null
+  linkedin: string | null
+  whatsapp: string | null
   shortDescription: string
   socialShare: {
     url: string

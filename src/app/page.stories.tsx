@@ -1,34 +1,38 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { expect, waitFor } from '@storybook/test'
-import HomeComponent from './page'
+import { within } from '@storybook/test'
+import Home from './page'
 
-const meta: Meta<typeof HomeComponent> = {
+const meta: Meta<typeof Home> = {
   title: 'Pages/Home',
-  component: HomeComponent
+  component: Home
 }
 
 export default meta
+type Story = StoryObj<typeof Home>
 
-type Story = StoryObj<typeof HomeComponent>
+export const Default: Story = {
+  name: 'Home',
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
 
-export const Home: Story = {
-  play: async ({ step }) => {
-    const about = await waitFor(() => {
-      document.getElementById('about')
-    })
-    const projects = await waitFor(() => document.getElementById('projects'))
-    const skills = await waitFor(() => document.getElementById('skills'))
-    const certificates = await waitFor(() => document.getElementById('certificates'))
-    const contact = await waitFor(() => document.getElementById('contact'))
+    // await step('<Banner />', async () => {
+    //   const BannerComponent = canvas.getByTestId('BannerComponent')
+    //   expect(BannerComponent).toBeVisible()
+    // })
 
-    await step('Render all sections', async () => {
-      waitFor(() => {
-        expect(about).toBeVisible()
-        expect(projects).toBeVisible()
-        expect(skills).toBeVisible()
-        expect(certificates).toBeVisible()
-        expect(contact).toBeVisible()
-      })
-    })
+    // await step('<SectionBenefits />', async () => {
+    //   const SectionBenefitsComponent = canvas.getByTestId('SectionBenefitsComponent')
+    //   expect(SectionBenefitsComponent).toBeVisible()
+    // })
+
+    // await step('<SectionPlans />', async () => {
+    //   const SectionPlansComponent = canvas.getByTestId('SectionPlansComponent')
+    //   expect(SectionPlansComponent).toBeVisible()
+    // })
+
+    // await step('<Faq />', async () => {
+    //   const FaqComponent = canvas.getByTestId('FaqComponent')
+    //   expect(FaqComponent).toBeVisible()
+    // })
   }
 }

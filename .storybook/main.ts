@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs'
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -11,11 +12,6 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {}
   },
-  docs: {},
-  staticDirs: ['../public'],
-  webpackFinal: (config) => {
-    config.resolve?.modules?.push(`${process.cwd()}/src`)
-    return config
-  }
+  staticDirs: ['../public']
 }
 export default config

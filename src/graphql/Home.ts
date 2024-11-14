@@ -7,6 +7,10 @@ export const GET_HOME = gql`
         name
         phone
         email
+        facebook
+        instagram
+        linkedin
+        whatsapp
       }
       banner {
         background {
@@ -39,11 +43,12 @@ export const GET_HOME = gql`
           price
           discount
           description
+          url
         }
       }
       faq {
         title
-        question {
+        questions {
           question
           answer
         }

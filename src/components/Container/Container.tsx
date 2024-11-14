@@ -5,5 +5,9 @@ interface ContainerProps extends ComponentProps<'div'> {
 }
 
 export function Container({ children, className }: ContainerProps) {
-  return <div className={`px-4 mx-auto w-full max-w-screen-xl ${className}`}>{children}</div>
+  return (
+    <div data-testid='container' className={`px-4 mx-auto w-full max-w-screen-xl ${className || ''}`}>
+      {children}
+    </div>
+  )
 }

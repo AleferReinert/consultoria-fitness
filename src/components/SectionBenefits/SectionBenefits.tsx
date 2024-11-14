@@ -15,7 +15,7 @@ export interface SectionBenefitsProps {
 
 export function SectionBenefits({ title, benefits }: SectionBenefitsProps) {
   return (
-    <Section title={title}>
+    <Section data-testid='SectionBenefitsComponent' title={title}>
       <ul className='grid sm:grid-cols-2 lg:grid-cols-4 gap-4'>
         {benefits.map((benefit, index) => {
           return (
