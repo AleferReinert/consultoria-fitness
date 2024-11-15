@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { expect, within } from '@storybook/test'
 import { homeMock } from 'app/page.mock'
+import { theme } from '../../../tailwind.config'
 import { Banner } from './Banner'
 
 const meta: Meta<typeof Banner> = {
@@ -20,8 +21,13 @@ export const Default: Story = {
     const canvas = within(canvasElement)
 
     await step('Title', () => {
-      const title = canvas.getByRole('heading', { name: args.title, level: 2 })
-      expect(title).toBeVisible()
+      const title = canvas.getByRole('heading', { level: 2 })
+      const italic = document.querySelector('h2>i')
+      const strong = document.querySelector('h2>strong')
+
+      expect(title).toContainHTML(args.title)
+      expect(italic).toHaveStyle('font-family: Merienda, cursive')
+      expect(strong).toHaveStyle({ color: theme.primary })
     })
 
     await step('Description', () => {

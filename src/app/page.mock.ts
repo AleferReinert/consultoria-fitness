@@ -30,7 +30,7 @@ export const homeMock: mockProps = {
       width: 768,
       height: 735
     },
-    title: 'Transforme seu físico com nossa metodologia!',
+    title: 'Transforme seu <i>físico</i> com nossa <strong>metodologia!</strong>',
     description:
       '<p>Receba seu <strong>plano de dieta</strong> + <strong>treino 100% personalizado</strong> e um acompanhamento no whatsapp para garantir sua evolução.</p><p>Na minha carreira sempre fui reconhecido por ter feito muito com pouco. Ter tido <strong>resultados fora da média</strong> com poucos recursos. E é exatamente isso que vou passar dentro da minha consultoria.</p>',
     label: 'Faça parte do nosso time',
@@ -71,6 +71,7 @@ export const homeMock: mockProps = {
   },
   sectionPlans: {
     title: 'Escolha seu plano',
+    showDiscount: true,
     plans: [
       {
         title: 'Plano Mensal',

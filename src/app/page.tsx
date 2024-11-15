@@ -40,7 +40,7 @@ export default function Page() {
         floatImg={banner.floatImg}
       />
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />
-      <SectionPlans title={sectionPlans.title} plans={sectionPlans.plans} />
+      <SectionPlans title={sectionPlans.title} showDiscount={sectionPlans.showDiscount} plans={sectionPlans.plans} />
       <Faq title={faq.title} questions={faq.questions} />
       <Footer
         name={enterprise.name}

@@ -38,6 +38,7 @@ export const GET_HOME = gql`
       }
       sectionPlans {
         title
+        showDiscount
         plans {
           title
           price

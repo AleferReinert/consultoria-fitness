@@ -16,7 +16,6 @@ export default meta
 type Story = StoryObj<typeof SectionPlans>
 
 export const Default: Story = {
-  name: 'SectionPlans',
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement)
 
@@ -68,6 +67,19 @@ export const Default: Story = {
         const buttonLinks = canvas.getAllByRole('link', { name: /selecionar/i })
         expect(buttonLinks[index]).toHaveAttribute('href', plan.url)
       })
+    })
+  }
+}
+export const WithoutDiscount: Story = {
+  args: {
+    showDiscount: false
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
+
+    await step('Without discount seals', () => {
+      const discounts = canvas.queryAllByText(/% off/i)
+      expect(discounts.length).toBe(0)
     })
   }
 }

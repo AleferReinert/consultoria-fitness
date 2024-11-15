@@ -1,15 +1,23 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Provider } from 'components/Provider'
 import { GET_LAYOUT } from 'graphql/Layout'
-import { Inter } from 'next/font/google'
+import { Inter, Merienda } from 'next/font/google'
 import { ReactNode } from 'react'
 import { client } from 'utils/client'
 import './globals.css'
 
 const inter = Inter({
-  weight: ['400', '700'],
+  weight: ['300', '400', '600', '700', '900'],
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-inter'
+})
+
+const merienda = Merienda({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-merienda'
 })
 
 export interface EnterpriseProps {
@@ -37,9 +45,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <title>{name}</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='description' content={shortDescription} />
-          <meta name='keywords' content='todo' />
           <meta name='theme-color' content='#000' />
-          <meta name='google-site-verification' content='todo' />
+          <meta name='google-site-verification' content='01tG19FkhgIo8cteSWl6WUHYFYCeZywVTSJC6Ua5WGA' />
           <link rel='preconnect' href='https://vercel.live' />
           <meta name='author' content={name} />
           <link rel='canonical' href={process.env.NEXT_PUBLIC_BASE_URL} />
@@ -62,7 +69,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <meta property='og:image:width' content='1200' />
           <meta property='og:image:height' content='630' />
         </head>
-        <body className={`${inter.className} bg-black text-white`}>
+        <body
+          className={`${merienda.variable} ${inter.variable} font-sans bg-secondary-theme text-lg text-paragraph-theme`}
+        >
           {children}
           <SpeedInsights />
         </body>

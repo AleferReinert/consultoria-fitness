@@ -81,4 +81,4 @@ npm run plop
 
 ## URL do Projeto
 
-Explore o projeto no link: [Consultoria Fitness](https://consultoria-fitness.vercel.app).
+Explore o projeto no link: [Consultoria Fitness](https://consultoria-fitness-online.vercel.app).
